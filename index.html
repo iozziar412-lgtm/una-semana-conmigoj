@@ -3,166 +3,356 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Una semana conmigo ❤️</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Montserrat,sans-serif;
 }
 
 body{
-    background:#0d0d0d;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    color:white;
+
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.95)),
+url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80");
+
+background-size:cover;
+background-position:center;
+height:100vh;
+overflow:hidden;
+color:white;
+
 }
 
-.caja{
-    background:#1b1b1b;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    width:360px;
-    box-shadow:0 0 30px rgba(255,255,255,.08);
+/* Intro */
+
+#intro{
+
+position:fixed;
+inset:0;
+background:black;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:99;
+animation:cerrar 2.6s forwards;
+
+}
+
+.logo{
+
+font-size:90px;
+font-weight:900;
+color:#e50914;
+letter-spacing:-5px;
+animation:zoom 2s;
+
+}
+
+@keyframes zoom{
+
+0%{transform:scale(.4);opacity:0;}
+
+60%{transform:scale(1.15);}
+
+100%{transform:scale(1);opacity:1;}
+
+}
+
+@keyframes cerrar{
+
+80%{opacity:1;}
+
+100%{
+
+opacity:0;
+visibility:hidden;
+
+}
+
+}
+
+header{
+
+position:absolute;
+top:30px;
+left:40px;
+font-size:45px;
+font-weight:900;
+color:#e50914;
+
+}
+
+.contenido{
+
+width:600px;
+margin-left:90px;
+margin-top:120px;
+
 }
 
 h1{
-    margin-bottom:15px;
-    font-size:30px;
+
+font-size:62px;
+margin-bottom:10px;
+
+}
+
+.info{
+
+display:flex;
+gap:15px;
+margin-bottom:25px;
+font-weight:600;
+
 }
 
 .descripcion{
-    color:#bdbdbd;
-    margin-bottom:25px;
-    line-height:1.5;
-}
 
-label{
-    display:block;
-    margin-bottom:10px;
-    font-weight:bold;
+color:#ddd;
+line-height:1.8;
+font-size:18px;
+max-width:550px;
+margin-bottom:35px;
+
 }
 
 input{
-    width:100%;
-    padding:15px;
-    font-size:22px;
-    text-align:center;
-    border:none;
-    border-radius:10px;
-    outline:none;
-    letter-spacing:8px;
+
+padding:15px;
+width:250px;
+font-size:22px;
+border:none;
+border-radius:6px;
+text-align:center;
+letter-spacing:8px;
+margin-top:10px;
+
 }
 
 button{
-    margin-top:20px;
-    width:100%;
-    padding:15px;
-    font-size:18px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    background:white;
-    transition:.3s;
+
+margin-top:20px;
+padding:16px 45px;
+font-size:18px;
+font-weight:bold;
+background:#e50914;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:.3s;
+
 }
 
 button:hover{
-    transform:scale(1.03);
+
+background:#ff1f2d;
+transform:scale(1.05);
+
 }
 
 #error{
-    color:#ff5b5b;
-    margin-top:15px;
+
+margin-top:15px;
+color:#ff6767;
+
 }
 
-#correcto{
-    display:none;
+#pelicula{
+
+display:none;
+
 }
 
-#correcto h2{
-    color:#4ade80;
-    margin-bottom:20px;
+footer{
+
+position:absolute;
+bottom:20px;
+left:40px;
+color:#999;
+font-size:14px;
+
 }
 
-#correcto p{
-    color:#d0d0d0;
-    line-height:1.6;
-    margin-bottom:25px;
+#loader{
+
+display:none;
+position:fixed;
+inset:0;
+background:black;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:50;
+
 }
+
+.barra{
+
+width:320px;
+height:8px;
+background:#333;
+margin-top:25px;
+overflow:hidden;
+
+}
+
+.progreso{
+
+height:100%;
+width:0;
+background:#e50914;
+animation:carga 2s forwards;
+
+}
+
+@keyframes carga{
+
+100%{
+
+width:100%;
+
+}
+
+}
+
 </style>
 
 </head>
+
 <body>
 
-<div class="caja">
+<div id="intro">
+
+<div class="logo">N</div>
+
+</div>
+
+<div id="loader">
+
+<h2>Cargando...</h2>
+
+<div class="barra">
+
+<div class="progreso"></div>
+
+</div>
+
+</div>
+
+<header>N</header>
+
+<div class="contenido">
 
 <div id="login">
 
-<h1>❤️ Una semana conmigo ❤️</h1>
+<h1>Una semana conmigo ❤️</h1>
+
+<div class="info">
+
+<span>★★★★★</span>
+
+<span>2026</span>
+
+<span>20 min</span>
+
+<span>Romance</span>
+
+</div>
 
 <p class="descripcion">
-Introduce la fecha que solo tú sabrás para desbloquear el vídeo.
+
+Mientras estabas de campamento decidí grabar un poquito de cada día para que, al volver, pudieras vivir mi semana conmigo.
+
 </p>
 
-<label>Fecha Importante</label>
+<h3>Fecha importante</h3>
 
 <input
-type="password"
 id="clave"
 maxlength="5"
+type="password"
 placeholder="•••••">
 
-<button onclick="entrar()">Desbloquear</button>
+<br>
+
+<button onclick="entrar()">
+
+Desbloquear
+
+</button>
 
 <p id="error"></p>
 
 </div>
 
-<div id="correcto">
+<div id="pelicula">
 
-<h2>❤️ Acceso concedido ❤️</h2>
+<h1>❤️ Bienvenida ❤️</h1>
 
-<p>
-Durante estos días no pudimos hablar, así que decidí grabar un poquito de cada día para que,
-cuando volvieras, pudieras vivir mi semana conmigo.
-Espero que te guste. ❤️
+<p class="descripcion">
+
+Ya estás dentro.
+
+Espero que este pequeño regalo te haga sonreír.
+
+Te quiero muchísimo ❤️
+
 </p>
 
-<button onclick="verVideo()">
-▶ Ver vídeo
+<button onclick="video()">
+
+▶ Reproducir
+
 </button>
 
 </div>
 
 </div>
 
+<footer>
+
+Solo disponible para Claudia ❤️
+
+</footer>
+
 <script>
 
 function entrar(){
 
-let clave=document.getElementById("clave").value;
+let c=document.getElementById("clave").value;
 
-if(clave==="21925"){
+if(c=="21926"){
 
 document.getElementById("login").style.display="none";
-document.getElementById("correcto").style.display="block";
+
+document.getElementById("pelicula").style.display="block";
 
 }else{
 
-document.getElementById("error").innerHTML="❌ Esa no es la fecha correcta.";
+document.getElementById("error").innerHTML="Fecha incorrecta ❤️";
 
 }
 
 }
 
-function verVideo(){
+function video(){
 
-window.location.href="https://youtu.be/zvOGqm_zFxE";
+document.getElementById("loader").style.display="flex";
+
+setTimeout(function(){
+
+window.location.href="https://TU_LINK_DEL_VIDEO";
+
+},2000);
 
 }
 
